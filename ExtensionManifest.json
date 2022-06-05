@@ -2,7 +2,7 @@
   "type": "Plugin",
   "name": "Pi-hole Plugin",
   "author": "Macro Deck",
-  "repository": "",
+  "repository": "https://github.com/SuchByte/Macro-Deck-Pi-hole-Plugin",
   "packageId": "SuchByte.PiHolePlugin",
   "version": "1.0.0",
   "target-plugin-api-version": 32,
