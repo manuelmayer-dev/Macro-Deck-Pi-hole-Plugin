@@ -36,8 +36,8 @@ namespace SuchByte.PiHolePlugin.Views
             this.lblHost = new System.Windows.Forms.Label();
             this.lblToken = new System.Windows.Forms.Label();
             this.txtToken = new SuchByte.MacroDeck.GUI.CustomControls.RoundedTextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblExampleHost = new System.Windows.Forms.Label();
+            this.lblTokenLocation = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtHost
@@ -122,35 +122,35 @@ namespace SuchByte.PiHolePlugin.Views
             this.txtToken.TabIndex = 6;
             this.txtToken.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // label3
+            // lblExampleHost
             // 
-            this.label3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.Silver;
-            this.label3.Location = new System.Drawing.Point(144, 55);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(456, 18);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "e.g. \"http://pi-hole\" or \"http://192.168.178.62\"";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblExampleHost.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblExampleHost.ForeColor = System.Drawing.Color.Silver;
+            this.lblExampleHost.Location = new System.Drawing.Point(144, 55);
+            this.lblExampleHost.Name = "lblExampleHost";
+            this.lblExampleHost.Size = new System.Drawing.Size(456, 18);
+            this.lblExampleHost.TabIndex = 7;
+            this.lblExampleHost.Text = "e.g. \"http://pi-hole\" or \"http://192.168.178.62\"";
+            this.lblExampleHost.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label4
+            // lblTokenLocation
             // 
-            this.label4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.Silver;
-            this.label4.Location = new System.Drawing.Point(144, 119);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(456, 18);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Settings -> API / Web interface -> API settings -> Show API token";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblTokenLocation.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTokenLocation.ForeColor = System.Drawing.Color.Silver;
+            this.lblTokenLocation.Location = new System.Drawing.Point(144, 119);
+            this.lblTokenLocation.Name = "lblTokenLocation";
+            this.lblTokenLocation.Size = new System.Drawing.Size(456, 18);
+            this.lblTokenLocation.TabIndex = 8;
+            this.lblTokenLocation.Text = "Settings -> API / Web interface -> API settings -> Show API token";
+            this.lblTokenLocation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // PluginConfigurationView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(639, 202);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblTokenLocation);
+            this.Controls.Add(this.lblExampleHost);
             this.Controls.Add(this.txtToken);
             this.Controls.Add(this.lblToken);
             this.Controls.Add(this.lblHost);
@@ -165,8 +165,8 @@ namespace SuchByte.PiHolePlugin.Views
             this.Controls.SetChildIndex(this.lblHost, 0);
             this.Controls.SetChildIndex(this.lblToken, 0);
             this.Controls.SetChildIndex(this.txtToken, 0);
-            this.Controls.SetChildIndex(this.label3, 0);
-            this.Controls.SetChildIndex(this.label4, 0);
+            this.Controls.SetChildIndex(this.lblExampleHost, 0);
+            this.Controls.SetChildIndex(this.lblTokenLocation, 0);
             this.ResumeLayout(false);
 
         }
@@ -178,7 +178,7 @@ namespace SuchByte.PiHolePlugin.Views
         private System.Windows.Forms.Label lblHost;
         private System.Windows.Forms.Label lblToken;
         private RoundedTextBox txtToken;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblExampleHost;
+        private System.Windows.Forms.Label lblTokenLocation;
     }
 }

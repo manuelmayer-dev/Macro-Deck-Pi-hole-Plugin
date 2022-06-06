@@ -1,5 +1,6 @@
 ﻿using SuchByte.MacroDeck.GUI.CustomControls;
 using SuchByte.MacroDeck.Plugins;
+using SuchByte.PiHolePlugin.Language;
 using SuchByte.PiHolePlugin.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,9 @@ namespace SuchByte.PiHolePlugin.Views
         public DisablePiHoleActionConfigView(PluginAction action)
         {
             InitializeComponent();
-
+            this.radioDisableTemporarily.Text = PluginLanguageManager.PluginStrings.Temporarily;
+            this.radioDisablePermanently.Text = PluginLanguageManager.PluginStrings.Permanently;
+            this.lblSeconds.Text = PluginLanguageManager.PluginStrings.Seconds;
             this._viewModel = new DisablePiHoleActionConfigViewModel(action);
         }
 
