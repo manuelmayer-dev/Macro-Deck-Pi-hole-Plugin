@@ -28,7 +28,6 @@ namespace SuchByte.PiHolePlugin.Language
             try
             {
                 PluginStrings = JsonSerializer.Deserialize<PluginStrings>(GetJsonLanguageResource(languageName));
-                MacroDeckLogger.Trace(Main.Instance, "Loaded " + PluginStrings.__Language__);
             }
             catch (Exception ex)
             {
@@ -46,8 +45,6 @@ namespace SuchByte.PiHolePlugin.Language
             {
                 languageName = "English"; //This should always be present as default, otherwise the code goes to fallback implementation.
             }
-
-            MacroDeckLogger.Trace(Main.Instance, "Detected " + languageName);
 
             string languageFileName = $"SuchByte.PiHolePlugin.Resources.Languages.{languageName}.json";
 
