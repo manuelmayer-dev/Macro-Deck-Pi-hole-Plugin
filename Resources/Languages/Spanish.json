@@ -1,5 +1,5 @@
 {
-    "__Language__": "Español",
+    "__Language__": "Spanish",
     "__LanguageCode__": "es",
     "SuccessfullyConnectedToPiHole": "La conexión al Pi-hole fue exitosa",
     "FailedToConnectToPiHole": "Error al conectar con el Pi-hole. Asegúrese que su Pi-hole se encuentre funcionando y haya escrito correctamente el host y el token api",
