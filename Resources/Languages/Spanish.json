@@ -1,1 +1,19 @@
-
+{
+    "__Language__": "Español",
+    "__LanguageCode__": "es",
+    "SuccessfullyConnectedToPiHole": "La conexión al Pi-hole fue exitosa",
+    "FailedToConnectToPiHole": "Error al conectar con el Pi-hole. Asegúrese que su Pi-hole se encuentre funcionando y haya escrito correctamente el host y el token api",
+    "InvalidHost": "Host url invalido",
+    "InvalidToken": "Api token invalido",
+    "Host": "Url del host",
+    "Token": "API Token",
+    "ExampleHost": "Ejemplo: \"http://pi-hole\" o \"http://192.168.178.62\"",
+    "TokenLocation": "Settings -> API / Web interface -> API settings -> Show API token",
+    "Temporarily": "Temporalmente",
+    "Permanently": "Permanentemente",
+    "Seconds": "Segundos",
+    "ActionDisablePiHole": "Deshabilitar Pi-hole",
+    "ActionDisablePiHoleDescription": "Deshabilita su Pi-hole de forma temporal o permanente",
+    "ActionEnablePiHole": "Habilitar Pi-hole",
+    "ActionEnablePiHoleDescription": "Habilitar Pi-hole"
+}
