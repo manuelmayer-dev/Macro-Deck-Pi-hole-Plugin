@@ -1,5 +1,6 @@
 ﻿using SuchByte.MacroDeck.Plugins;
 using SuchByte.PiHolePlugin.Actions;
+using SuchByte.PiHolePlugin.Language;
 using SuchByte.PiHolePlugin.Views;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace SuchByte.PiHolePlugin
         public override void Enable()
         {
             Instance ??= this;
-
+            PluginLanguageManager.Initialize();
             PiHoleHelper.Initialize(PluginConfigurationHelper.GetHost(), CredentialsHelper.GetToken());
             
             this.Actions = new List<PluginAction>()
