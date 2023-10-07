@@ -64,11 +64,11 @@ namespace SuchByte.PiHolePlugin
                     var queriesBlocked = Int32.Parse(summary.AdsBlockedToday.Replace(",", "").Replace(".", ""));
                     var percentageBlocked = float.Parse(summary.AdsPercentageToday.Replace(".", ","));
 
-                    VariableManager.SetValue("pi_hole_enabled", status == "enabled", VariableType.Bool, Main.Instance);
-                    VariableManager.SetValue("pi_hole_total_queries", totalQueries, VariableType.Integer, Main.Instance);
-                    VariableManager.SetValue("pi_hole_domains_adlists", domainsAdlists, VariableType.Integer, Main.Instance);
-                    VariableManager.SetValue("pi_hole_queries_blocked", queriesBlocked, VariableType.Integer, Main.Instance);
-                    VariableManager.SetValue("pi_hole_percentage_blocked", percentageBlocked, VariableType.Float, Main.Instance);
+                    VariableManager.SetValue("pi_hole_enabled", status == "enabled", VariableType.Bool, Main.Instance, null);
+                    VariableManager.SetValue("pi_hole_total_queries", totalQueries, VariableType.Integer, Main.Instance, null);
+                    VariableManager.SetValue("pi_hole_domains_adlists", domainsAdlists, VariableType.Integer, Main.Instance, null);
+                    VariableManager.SetValue("pi_hole_queries_blocked", queriesBlocked, VariableType.Integer, Main.Instance, null);
+                    VariableManager.SetValue("pi_hole_percentage_blocked", percentageBlocked, VariableType.Float, Main.Instance, null);
                 }
                 catch (Exception ex)
                 {
