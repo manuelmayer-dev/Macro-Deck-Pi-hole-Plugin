@@ -2,38 +2,35 @@
 using SuchByte.PiHolePlugin.Actions;
 using SuchByte.PiHolePlugin.Language;
 using SuchByte.PiHolePlugin.Views;
-using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
-namespace SuchByte.PiHolePlugin
+namespace SuchByte.PiHolePlugin;
+
+public class Main : MacroDeckPlugin
 {
-    public class Main : MacroDeckPlugin
+
+    public static Main Instance;
+
+    public override bool CanConfigure => true;
+
+    public override void Enable()
     {
-
-        public static Main Instance;
-
-        public override bool CanConfigure => true;
-
-        public override void Enable()
-        {
-            Instance ??= this;
-            PluginLanguageManager.Initialize();
-            PiHoleHelper.Initialize(PluginConfigurationHelper.GetHost(), CredentialsHelper.GetToken());
+        Instance ??= this;
+        PluginLanguageManager.Initialize();
+        PiHoleHelper.Initialize(PluginConfigurationHelper.GetHost(), CredentialsHelper.GetToken());
             
-            this.Actions = new List<PluginAction>()
-            {
-                new DisablePiHoleAction(),
-                new EnablePiHoleAction(),
-            };
-        }
-
-        public override void OpenConfigurator()
+        this.Actions = new List<PluginAction>()
         {
-            using (var pluginConfigurator = new PluginConfigurationView())
-            {
-                pluginConfigurator.ShowDialog();
-            }
+            new DisablePiHoleAction(),
+            new EnablePiHoleAction(),
+        };
+    }
+
+    public override void OpenConfigurator()
+    {
+        using (var pluginConfigurator = new PluginConfigurationView())
+        {
+            pluginConfigurator.ShowDialog();
         }
     }
 }
