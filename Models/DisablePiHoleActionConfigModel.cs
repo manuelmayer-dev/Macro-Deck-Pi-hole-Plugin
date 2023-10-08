@@ -1,23 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Text.Json;
+﻿using System.Text.Json;
 
-namespace SuchByte.PiHolePlugin.Models
+namespace SuchByte.PiHolePlugin.Models;
+
+public class DisablePiHoleActionConfigModel : ISerializableConfiguration
 {
-    public class DisablePiHoleActionConfigModel : ISerializableConfiguration
+
+    public long Seconds { get; set; } = 10;
+
+
+    public string Serialize()
     {
-
-        public long Seconds { get; set; } = 10;
-
-
-        public string Serialize()
-        {
-            return JsonSerializer.Serialize(this);
-        }
-        public static DisablePiHoleActionConfigModel Deserialize(string config)
-        {
-            return ISerializableConfiguration.Deserialize<DisablePiHoleActionConfigModel>(config);
-        }
+        return JsonSerializer.Serialize(this);
+    }
+    public static DisablePiHoleActionConfigModel Deserialize(string config)
+    {
+        return ISerializableConfiguration.Deserialize<DisablePiHoleActionConfigModel>(config);
     }
 }

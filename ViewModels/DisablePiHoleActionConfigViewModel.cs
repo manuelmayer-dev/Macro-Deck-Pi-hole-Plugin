@@ -2,50 +2,47 @@
 using SuchByte.MacroDeck.Plugins;
 using SuchByte.PiHolePlugin.Models;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace SuchByte.PiHolePlugin.ViewModels
+namespace SuchByte.PiHolePlugin.ViewModels;
+
+internal class DisablePiHoleActionConfigViewModel : ISerializableConfigViewModel
 {
-    internal class DisablePiHoleActionConfigViewModel : ISerializableConfigViewModel
+    private readonly PluginAction _action;
+
+    public DisablePiHoleActionConfigModel Configuration { get; set; }
+
+    ISerializableConfiguration ISerializableConfigViewModel.SerializableConfiguration => Configuration;
+
+    public long Seconds
     {
-        private readonly PluginAction _action;
+        get => Configuration.Seconds;
+        set => Configuration.Seconds = value;
+    }
 
-        public DisablePiHoleActionConfigModel Configuration { get; set; }
+    public DisablePiHoleActionConfigViewModel(PluginAction action)
+    {
+        this.Configuration = DisablePiHoleActionConfigModel.Deserialize(action.Configuration);
+        this._action = action;
+    }
 
-        ISerializableConfiguration ISerializableConfigViewModel.SerializableConfiguration => Configuration;
-
-        public long Seconds
+    public bool SaveConfig()
+    {
+        try
         {
-            get => Configuration.Seconds;
-            set => Configuration.Seconds = value;
+            SetConfig();
+            MacroDeckLogger.Info(Main.Instance, $"{GetType().Name}: config saved");
         }
-
-        public DisablePiHoleActionConfigViewModel(PluginAction action)
+        catch (Exception ex)
         {
-            this.Configuration = DisablePiHoleActionConfigModel.Deserialize(action.Configuration);
-            this._action = action;
+            MacroDeckLogger.Error(Main.Instance, $"{GetType().Name}: Error while saving config: { ex.Message + Environment.NewLine + ex.StackTrace }");
+            return false;
         }
+        return true;
+    }
 
-        public bool SaveConfig()
-        {
-            try
-            {
-                SetConfig();
-                MacroDeckLogger.Info(Main.Instance, $"{GetType().Name}: config saved");
-            }
-            catch (Exception ex)
-            {
-                MacroDeckLogger.Error(Main.Instance, $"{GetType().Name}: Error while saving config: { ex.Message + Environment.NewLine + ex.StackTrace }");
-                return false;
-            }
-            return true;
-        }
-
-        public void SetConfig()
-        {
-            _action.ConfigurationSummary = Seconds == 0 ? "Permanently" : String.Format("{0} seconds", Seconds);
-            _action.Configuration = Configuration.Serialize();
-        }
+    public void SetConfig()
+    {
+        _action.ConfigurationSummary = Seconds == 0 ? "Permanently" : String.Format("{0} seconds", Seconds);
+        _action.Configuration = Configuration.Serialize();
     }
 }
